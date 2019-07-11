@@ -23,7 +23,7 @@ public class ChannelLinkGetter {
     private long NUMBER_OF_VIDEOS_RETURNED;
 
     private  String CHANNEL_ID;
-
+    private String APIKEY;
     private String nextpage;
     private String prevpage;
     private List<String> returnlist;
@@ -41,6 +41,12 @@ public class ChannelLinkGetter {
         }).setApplicationName("youtube-cmdline-search-GUI").build();
         nextpage = new String();
         prevpage = new String();
+        APIReader apiReader = new APIReader();
+        try {
+            APIKEY= apiReader.GetKey();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     // page could be None, Next and Prev
@@ -52,12 +58,14 @@ public class ChannelLinkGetter {
 
         try {
             YouTube.Search.List search = youtube.search().list("id,snippet");
-            search.setKey("AIzaSyA2RQ6Reo21f3CPvaVdKNgHliJaNxtvr90");
+            search.setKey(APIKEY);
             search.setType("video");
 
             search.setChannelId(CHANNEL_ID);
             search.setMaxResults(NUMBER_OF_VIDEOS_RETURNED);
             search.setOrder("Date");
+
+            if(Dateafter!= null)
             search.setPublishedAfter(DateTime.parseRfc3339(Dateafter));
 
             if(Page == "Next") {
@@ -72,8 +80,9 @@ public class ChannelLinkGetter {
 
             System.out.println(searchResponse);
             searchResultList = searchResponse.getItems();
+            if(searchResponse.getNextPageToken() != null)
             nextpage = searchResponse.getNextPageToken();
-            System.out.println(nextpage);
+            if(searchResponse.getPrevPageToken() != null)
             prevpage = searchResponse.getPrevPageToken();
 
             CreateReturnList();
@@ -134,28 +143,30 @@ public class ChannelLinkGetter {
         return returnlist;
     }
 
-    private static void prettyPrint(Iterator<SearchResult> iteratorSearchResults) {
 
-
-
-        if (!iteratorSearchResults.hasNext()) {
-            System.out.println(" There aren't any results for your query.");
-        }
-
-        while (iteratorSearchResults.hasNext()) {
-
-            SearchResult singleVideo = iteratorSearchResults.next();
-            ResourceId rId = singleVideo.getId();
-
-            // Confirm that the result represents a video. Otherwise, the
-            // item will not contain a video ID.
-            if (rId.getKind().equals("youtube#video")) {
-                Thumbnail thumbnail = singleVideo.getSnippet().getThumbnails().getDefault();
-                System.out.println("Thumbnai: " + thumbnail.getUrl());
-
-                System.out.println("https://www.youtube.com/watch?v=" + rId.getVideoId());
-            }
-        }
-    }
+    // API Sample method
+//    private static void prettyPrint(Iterator<SearchResult> iteratorSearchResults) {
+//
+//
+//
+//        if (!iteratorSearchResults.hasNext()) {
+//            System.out.println(" There aren't any results for your query.");
+//        }
+//
+//        while (iteratorSearchResults.hasNext()) {
+//
+//            SearchResult singleVideo = iteratorSearchResults.next();
+//            ResourceId rId = singleVideo.getId();
+//
+//            // Confirm that the result represents a video. Otherwise, the
+//            // item will not contain a video ID.
+//            if (rId.getKind().equals("youtube#video")) {
+//                Thumbnail thumbnail = singleVideo.getSnippet().getThumbnails().getDefault();
+//                System.out.println("Thumbnai: " + thumbnail.getUrl());
+//
+//                System.out.println("https://www.youtube.com/watch?v=" + rId.getVideoId());
+//            }
+//        }
+//    }
 
 }
