@@ -141,15 +141,15 @@ CodeCache: size=245760Kb used=7429Kb max_used=7442Kb free=238330Kb
  compilation: enabled
 
 Compilation events (10 events):
-Event: 15.280 Thread 0x000000001e56f800 2417 %     3       Main.LinkGetter::GetLinkList @ 8 (100 bytes)
+Event: 15.280 Thread 0x000000001e56f800 2417 %     3       Main.ChannelLinkGetter::GetLinkList @ 8 (100 bytes)
 Event: 15.281 Thread 0x000000001e56f800 nmethod 2417% 0x000000000366fbd0 code [0x000000000366fe60, 0x0000000003671228]
-Event: 15.281 Thread 0x000000001e56f800 2418       3       Main.LinkGetter::GetLinkList (100 bytes)
+Event: 15.281 Thread 0x000000001e56f800 2418       3       Main.ChannelLinkGetter::GetLinkList (100 bytes)
 Event: 15.281 Thread 0x000000001e56f800 nmethod 2418 0x0000000003674b10 code [0x0000000003674e00, 0x0000000003676528]
 Event: 15.290 Thread 0x000000001e56f800 2419       3       java.util.zip.ZipFile$ZipFileInflaterInputStream::finalize (5 bytes)
 Event: 15.290 Thread 0x000000001e56f800 nmethod 2419 0x000000000366f810 code [0x000000000366f980, 0x000000000366fb28]
 Event: 15.291 Thread 0x000000001e56f800 2420       1       java.lang.ref.Finalizer::access$000 (4 bytes)
 Event: 15.291 Thread 0x000000001e56f800 nmethod 2420 0x000000000366f590 code [0x000000000366f6e0, 0x000000000366f7d0]
-Event: 15.291 Thread 0x000000001e56b800 2421 %     4       Main.LinkGetter::GetLinkList @ 8 (100 bytes)
+Event: 15.291 Thread 0x000000001e56b800 2421 %     4       Main.ChannelLinkGetter::GetLinkList @ 8 (100 bytes)
 Event: 15.303 Thread 0x000000001e56b800 nmethod 2421% 0x00000000036790d0 code [0x0000000003679280, 0x0000000003679c18]
 
 GC Heap History (10 events):

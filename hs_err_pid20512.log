@@ -145,7 +145,7 @@ Event: 4.634 Thread 0x000000001e297800 2228       3       java.util.zip.ZipFile$
 Event: 4.634 Thread 0x000000001e297800 nmethod 2228 0x000000000337ccd0 code [0x000000000337ce40, 0x000000000337cfc8]
 Event: 4.634 Thread 0x000000001e297800 2229       1       java.lang.ref.Finalizer::access$000 (4 bytes)
 Event: 4.634 Thread 0x000000001e297800 nmethod 2229 0x000000000337ca50 code [0x000000000337cba0, 0x000000000337cc90]
-Event: 4.635 Thread 0x000000001e296000 2230 %     4       Main.LinkGetter::GetLinkList @ 8 (94 bytes)
+Event: 4.635 Thread 0x000000001e296000 2230 %     4       Main.ChannelLinkGetter::GetLinkList @ 8 (94 bytes)
 Event: 4.643 Thread 0x000000001e296000 nmethod 2230% 0x000000000337f050 code [0x000000000337f200, 0x000000000337fb98]
 Event: 6.593 Thread 0x000000001e297800 2231       3       com.sun.javafx.tk.quantum.QuantumToolkit$$Lambda$42/240076702::run (8 bytes)
 Event: 6.594 Thread 0x000000001e297800 nmethod 2231 0x000000000337c250 code [0x000000000337c400, 0x000000000337c848]

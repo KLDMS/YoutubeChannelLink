@@ -11,8 +11,7 @@ public class Main  {
     public static void main(String[] args) {
 
 
-        LinkGetter linkGetter= new LinkGetter();
-        linkGetter.GetLink(NUMBER_OF_VIDEOS_RETURNED, CHANNEL_ID);
+
 
 
     }

@@ -12,7 +12,7 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("GUI_layout.fxml"));
         primaryStage.setTitle("YoutubeChannelLinks");
-        primaryStage.setScene(new Scene(root, 600, 700));
+        primaryStage.setScene(new Scene(root, 620, 720));
         primaryStage.show();
     }
 
